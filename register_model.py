@@ -1,14 +1,9 @@
+import pandas as pd
 class Register:
-    def __init__(self, name, email, password, registered_users):
+    def __init__(self, name, email, password):
         self.name = name
         self.email = email
         self.password = password
-        self.registered_users = registered_users
-        registered_users = {
-        "name": name,
-        "email": email,
-        "password": password
-    }
 
     def validate_name(name):
         # checking if the name is not empty
@@ -17,6 +12,9 @@ class Register:
         # checking if the name is at least 3 characters long
         if len(name) < 3:
             return False, "Name must be at least 3 characters long"
+        # checking if the name is already registered
+        if name.count >= 2:
+            return False, "Name is already registered"
     
 
     def validate_email(email):
@@ -27,7 +25,7 @@ class Register:
         if "@" not in email:
             return False, "Email is not valid"
         # checking if the email is already registered
-        if email in registered_users:
+        if email.count >= 2:
             return False, "Email is already registered"
         
     def validate_password(password):
