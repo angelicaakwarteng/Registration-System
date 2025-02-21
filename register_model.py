@@ -15,6 +15,8 @@ class Register:
         # checking if the name is already registered
         if name.count >= 2:
             return False, "Name is already registered"
+        
+        return True, "Name is valid"
     
 
     def validate_email(email):
@@ -27,6 +29,8 @@ class Register:
         # checking if the email is already registered
         if email.count >= 2:
             return False, "Email is already registered"
+        
+        return True, "Email is valid"
         
     def validate_password(password):
         # checking if the password is not empty
@@ -53,3 +57,5 @@ class Register:
         # checking if the password contains at least one space
         if " " in password:
             return False, "Password cannot contain spaces"
+
+        return True
