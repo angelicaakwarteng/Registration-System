@@ -15,3 +15,5 @@ def register_user(name, email, password):
     else:
         # returning the error messages
         return False, name_error + email_error + password_error
+
+

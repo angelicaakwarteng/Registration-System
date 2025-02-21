@@ -53,5 +53,3 @@ class Register:
         # checking if the password contains at least one space
         if " " in password:
             return False, "Password cannot contain spaces"
-        
-
